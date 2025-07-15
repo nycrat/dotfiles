@@ -18,13 +18,15 @@
     "font_size": 30.0
   },
   {
-    "font_family": "honchokomono",
-    "font_size": 36.0
+    "font_family": "Lilex",
+    "font_size": 28.0
   },
   {
-    "font_family": "CMU Typewriter Text",
-    "italic_font": "CMU Typewriter Text Oblique",
-    "bold_italic_font": "CMU Typewriter Text Bold",
+    "font_family": "OperatorMono-Book",
+    "font_size": 30.0
+  },
+  {
+    "font_family": "honchokomono",
     "font_size": 30.0
   }
 ]
