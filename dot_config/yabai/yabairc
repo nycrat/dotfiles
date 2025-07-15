@@ -18,3 +18,5 @@ yabai -m rule --add app="Godot" manage=off
 # yabai -m rule --add app="Kitty" padding=0
 
 yabai -m space 10 --layout stack
+
+yabai -m rule --add app='^System Information$' manage=off
