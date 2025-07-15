@@ -1,25 +1,26 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi # Path to your oh-my-zsh installation.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 zstyle ':omz:update' frequency 7
 
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+plugins=(git tmux z zsh-syntax-highlighting you-should-use fzf zsh-nvm)
 
-plugins=(git tmux z zsh-syntax-highlighting you-should-use command-not-found)
-
-source $HOME/.zshnvm
 source $ZSH/oh-my-zsh.sh
 
-DISABLE_AUTO_TITLE=true
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export LANG=en_US.UTF-8
+export HOMEBREW_NO_AUTO_UPDATE=1
+DISABLE_AUTO_TITLE=true
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -28,44 +29,43 @@ else
   export EDITOR="nvim"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Might need this for tmux and colors, might actually be fixed now
+# [[ -n $TMUX ]] && export TERM="xterm-256color"
+export COLORTERM=truecolor
+
+# Aliases
 
 bindkey -s ^f "^utmux-sessionizer\n"
 bindkey -s ^s "^ufont-switcher; pkill -SIGUSR1 -a kitty\n"
 
+export neo() {
+  neovide $1 &
+}
+
+alias tn="tmux new-session"
 alias n="nvim"
 alias q="qalc"
-alias o="open"
 alias qalc="qalc -s 'exp -1'"
 
 # git commit empty
 alias gce="git commit --allow-empty-message -m ''"
 
-alias lls="/bin/ls"
-
 alias ls="lsd"
-alias ll="lsd -l --icons"
+alias ll="lsd -l"
 alias la="lsd -A"
 alias tree='lsd --tree $(IGNORE=$(git rev-parse --show-toplevel)/.gitignore; if [ -f "$IGNORE" ]; then xargs printf " --ignore-glob=%s" < "$IGNORE"; fi)'
 
 alias python="python3"
 alias py="python3"
 
+# PATH STUFF
+
 export GOPATH="$HOME/.go"
 
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.codon/bin
-export PATH=$PATH:$GOPATH/bin
-
-export COLORTERM=truecolor
-
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-[[ -n $TMUX ]] && export TERM="xterm-256color"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:$HOME/.go/bin
 
 # bun completions
 [ -s "/Users/avah/.bun/_bun" ] && source "/Users/avah/.bun/_bun"
@@ -73,8 +73,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export HOMEBREW_NO_AUTO_UPDATE=1
 
-export SSL_CERT_FILE="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/certifi/cacert.pem"
+# export SSL_CERT_FILE="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/certifi/cacert.pem"
 
 export GPG_TTY=$(tty)
