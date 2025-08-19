@@ -7,10 +7,6 @@
     "font_size": 30.0
   },
   {
-    "font_family": "Iosevka SS14",
-    "font_size": 30.0
-  },
-  {
     "font_family": "Iosevka Regular",
     "bold_font": "Iosevka Heavy",
     "italic_font": "Iosevka Italic",
@@ -18,15 +14,11 @@
     "font_size": 30.0
   },
   {
-    "font_family": "Lilex",
-    "font_size": 28.0
-  },
-  {
     "font_family": "OperatorMono-Book",
     "font_size": 30.0
   },
   {
     "font_family": "honchokomono",
-    "font_size": 30.0
+    "font_size": 36.0
   }
 ]
