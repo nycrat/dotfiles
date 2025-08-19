@@ -39,7 +39,7 @@ bindkey -s ^f "^utmux-sessionizer\n"
 bindkey -s ^s "^ufont-switcher; pkill -SIGUSR1 -a kitty\n"
 
 export neo() {
-  neovide $1 &
+  neovide $@ &
 }
 
 alias tn="tmux new-session"
@@ -50,10 +50,9 @@ alias qalc="qalc -s 'exp -1'"
 # git commit empty
 alias gce="git commit --allow-empty-message -m ''"
 
-alias ls="lsd"
-alias ll="lsd -l"
-alias la="lsd -A"
-alias tree='lsd --tree $(IGNORE=$(git rev-parse --show-toplevel)/.gitignore; if [ -f "$IGNORE" ]; then xargs printf " --ignore-glob=%s" < "$IGNORE"; fi)'
+alias ls="eza -l --icons=always"
+alias la="eza -l -a --icons=always"
+alias lt="eza -T --icons=always"
 
 alias python="python3"
 alias py="python3"
