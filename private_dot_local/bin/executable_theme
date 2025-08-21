@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+CURRENT_THEME=$(cat ~/.theme)
+
+case "$CURRENT_THEME" in
+  "light")
+    kitten themes Nightfox
+    echo dark > ~/.theme
+    echo Theme switched to dark
+    ;;
+  *) # default to light, doesnt check for "dark"
+    kitten themes Dawnfox
+    echo light > ~/.theme
+    echo Theme switched to light
+    ;;
+esac

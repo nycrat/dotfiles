@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+for f in *.jpg; do
+  magick $f ${f%%.*}.png
+done
+
+for f in *.jpeg; do
+  magick $f ${f%%.*}.png
+done
+
+for f in *.webp; do
+  magick $f ${f%%.*}.png
+done

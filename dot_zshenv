@@ -1,0 +1,16 @@
+# Path variable
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/.codon/bin
+PATH=$PATH:$HOME/.go/bin
+
+
+# Added by Toolbox App
+PATH="$PATH:/Users/avah/Library/Application Support/JetBrains/Toolbox/scripts"
+
+export PATH
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#: Show difference between zshenv and zshrc
+alias lll="ls"

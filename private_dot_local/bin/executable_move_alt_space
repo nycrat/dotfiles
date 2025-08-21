@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+space=$(yabai -m query --spaces | jq '.[] | select(.["has-focus"] == true) | .index')
+
+new_space=$(((space+10)%20))
+
+yabai -m window --space $new_space

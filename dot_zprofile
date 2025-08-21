@@ -1,6 +1,0 @@
-# Added by Toolbox App
-PATH="$PATH:/Users/avah/Library/Application Support/JetBrains/Toolbox/scripts"
-
-export PATH
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
