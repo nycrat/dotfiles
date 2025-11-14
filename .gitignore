@@ -1,0 +1,20 @@
+*
+!.gitignore
+!.config
+!.config/i3
+!.config/i3/*
+
+!.config/wezterm
+!.config/wezterm/*
+
+!.config/fish
+!.config/fish/*
+
+# !.config/nvim
+# !.config/nvim/*
+
+!.tmux.conf
+!.tmux
+!.tmux/*
+
+!readmd.txt
