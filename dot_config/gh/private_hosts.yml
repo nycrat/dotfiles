@@ -2,4 +2,5 @@ github.com:
     git_protocol: https
     users:
         NycRat:
-    user: NycRat
+        nycrat:
+    user: nycrat
