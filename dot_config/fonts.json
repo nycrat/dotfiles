@@ -4,20 +4,20 @@
     "bold_font": "Iosevka Semibold",
     "italic_font": "Iosevka Light Italic",
     "bold_italic_font": "Iosevka Semibold Italic",
-    "font_size": 30.0
+    "font_size": 24.0
   },
   {
     "font_family": "Iosevka Regular",
     "bold_font": "Iosevka Heavy",
     "italic_font": "Iosevka Italic",
     "bold_italic_font": "Iosevka Heavy Italic",
-    "font_size": 30.0
+    "font_size": 24.0
   },
   {
     "font_family": "Iosevka Medium",
     "bold_font": "Iosevka Heavy",
     "italic_font": "Iosevka Medium Italic",
     "bold_italic_font": "Iosevka Heavy Italic",
-    "font_size": 30.0
+    "font_size": 24.0
   }
 ]

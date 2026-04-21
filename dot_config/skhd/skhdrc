@@ -75,3 +75,7 @@ shift + ctrl + alt - m : $HOME/.config/skhd/move_alt_space.sh
 
 ctrl + alt + cmd - n : yabai --restart-service
 ctrl + alt + cmd - m : $HOME/.config/skhd/toggle_menubar.sh
+
+# Applications
+
+ctrl + cmd - return : $HOME/.config/skhd/launch_kitty.sh
