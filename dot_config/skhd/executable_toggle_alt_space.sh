@@ -1,0 +1,5 @@
+space=$(yabai -m query --spaces | jq '.[] | select(.["has-focus"] == true) | .index')
+
+new_space=$(((space+10)%20))
+
+yabai -m space --focus $new_space

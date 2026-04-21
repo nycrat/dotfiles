@@ -4,12 +4,17 @@ sudo yabai --load-sa
 yabai -m config                  \
   layout           bsp           \
   window_placement second_child  \
-  menubar_opacity  1.0           \
-#  window_gap       10            \
-#  top_padding      10            \
-#  bottom_padding   10            \
-#  left_padding     10            \
-#  right_padding    10
+
+yabai -m config        \
+  menubar_opacity 0.0  \
+  window_shadow   off
+
+yabai -m config       \
+  window_gap       10 \
+  top_padding      10 \
+  bottom_padding   10 \
+  left_padding     10 \
+  right_padding    10
 
 yabai -m rule --add app="Stats" manage=off
 yabai -m rule --add app="Godot" manage=off
@@ -17,6 +22,20 @@ yabai -m rule --add app="Godot" manage=off
 # yabai -m rule --add app="Inkscape" manage=off
 # yabai -m rule --add app="Kitty" padding=0
 
-yabai -m space 10 --layout stack
+yabai -m space 9 --layout float
+yabai -m space 10 --layout float
 
 yabai -m rule --add app='^System Information$' manage=off
+
+# Window borders using https://github.com/FelixKratz/JankyBorders
+options=(
+	style=round
+	width=6.0
+	hidpi=on
+	active_color=0xff907aa9
+	inactive_color=0x66907aa9
+)
+borders "${options[@]}"
+
+# Menubar using https://github.com/felixkratz/sketchybar
+# brew services restart sketchybar
